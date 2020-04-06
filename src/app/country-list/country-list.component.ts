@@ -56,19 +56,19 @@ export class CountryListComponent implements OnInit {
         datasets: [{ 
             data: confirmedList,
             label: "confirmed",
-            borderColor: "yellow",
+            borderColor: "rgb(235, 213, 15)",
             fill: false
           }, 
            { 
             data:deathList,
             label: "dead",
-            borderColor: "orange",
+            borderColor: "rgba(255, 136, 0, 0.795)",
             fill: false
           },
           { 
             data: recoveredList,
             label: "Recovered",
-            borderColor: "green",
+            borderColor: "rgb(49, 190, 49)",
             fill: false
           },
         ]
@@ -90,8 +90,5 @@ export class CountryListComponent implements OnInit {
       }
     })
   }
-
-
-
 
 }

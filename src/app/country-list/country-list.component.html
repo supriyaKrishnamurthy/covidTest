@@ -16,15 +16,15 @@
     <div class="selectedCountry">
       <div *ngIf="clickedCountry; else showGlobal">
             <h2>{{clickedCountry}}</h2>
-            <span id="confirmed">Confirmed:{{confirmed}}  </span>
-            <span id="dead">Deaths:{{death}}  </span>
-            <span id="recovered">Recovered:{{recovered}}</span>
+            <span>Confirmed: </span><span id="confirmed">{{confirmed}} </span>
+            <span>Deaths: </span><span id="dead">{{death}}  </span>
+            <span>Recovered: </span><span id="recovered">{{recovered}}</span>
       </div>
       <ng-template #showGlobal> 
         <h2>Global</h2>
-        <span id="globalConfirmed">Confirmed:{{globalConfirmed}}  </span>
-        <span id="globalDead">Deaths:{{globalDeath}}  </span>
-        <span id="globalRecovered">Recovered:{{globalRecovered}}</span>
+        <span>Confirmed: </span><span id="globalConfirmed">{{globalConfirmed}}  </span>
+        <span>Deaths: </span><span id="globalDead">{{globalDeath}}  </span>
+        <span>Recovered:</span><span id="globalRecovered">{{globalRecovered}}</span>
      </ng-template>
      </div>
     <div class="stat"></div>
