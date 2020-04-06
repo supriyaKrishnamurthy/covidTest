@@ -3,6 +3,7 @@
     <div class="search">
        <input type="text" placeholder="search country" name="search" [(ngModel)]="searchInput" (ngModelChange)='searchByCountry()'>
     </div>
+ <div class="countries">
     <div class="list">
         <ul>
             <li *ngFor="let country of covidData | keyvalue" class="countryList">
@@ -11,6 +12,7 @@
         </ul>
 
     </div>
+</div>
 </div>
 <div class="displayStat">
     <div class="selectedCountry">
