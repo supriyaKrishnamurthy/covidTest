@@ -1,0 +1,35 @@
+<div class="fullPage">
+<div class="countryTab">
+    <div class="search">
+       <input type="text" placeholder="search country" name="search" [(ngModel)]="searchInput" (ngModelChange)='searchByCountry()'>
+    </div>
+    <div class="list">
+        <ul>
+            <li *ngFor="let country of covidData | keyvalue" class="countryList">
+                <div class="area" (click)="printCountry(country)">{{country.key}}</div>
+            </li>
+        </ul>
+
+    </div>
+</div>
+<div class="displayStat">
+    <div class="selectedCountry">
+      <div *ngIf="clickedCountry; else showGlobal">
+            <h2>{{clickedCountry}}</h2>
+            <span id="confirmed">Confirmed:{{confirmed}}  </span>
+            <span id="dead">Deaths:{{death}}  </span>
+            <span id="recovered">Recovered:{{recovered}}</span>
+      </div>
+      <ng-template #showGlobal> 
+        <h2>Global</h2>
+        <span id="globalConfirmed">Confirmed:{{globalConfirmed}}  </span>
+        <span id="globalDead">Deaths:{{globalDeath}}  </span>
+        <span id="globalRecovered">Recovered:{{globalRecovered}}</span>
+     </ng-template>
+     </div>
+    <div class="stat"></div>
+</div>
+<div class="graph">
+    <canvas id="canvas">{{chart}}</canvas>
+</div>
+</div>

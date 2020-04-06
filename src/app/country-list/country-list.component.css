@@ -1,0 +1,55 @@
+.countryTab{
+    width:40vh;
+    padding: 24px 24px 0 24px;
+    box-sizing: border-box;
+    background-color: rgb(10, 12, 12);
+    float:left;
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    min-height: 100vh;
+    overflow:hidden;
+    overflow-y:scroll;
+    border-radius: 5px;
+}
+
+.countryList{
+    list-style-type: none;
+}
+
+.area{
+     color:#1ee0c6;
+     font-size: medium;
+}
+
+.displayStat{
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        overflow: hidden; /* if you don't want #second to wrap below #first */
+        text-align: center;
+        background-color:black;
+        color: #1ee0c6;
+        max-height: 20vh;
+        font-size:large;
+}
+
+#confirmed, #globalConfirmed{
+    color:rgb(235, 213, 15);
+}
+
+#dead, #globalDead{
+    color:rgba(255, 136, 0, 0.795);
+}
+
+#recovered,#globalRecovered{
+    color:rgb(49, 190, 49);
+}
+
+
+.graph{
+    float:left;
+    display:flex;
+    height:85vh;
+    width:1195px;
+    background-color: #91fcf6;;
+}
