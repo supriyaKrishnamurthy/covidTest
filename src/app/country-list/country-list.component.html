@@ -1,7 +1,11 @@
 <div class="fullPage">
+<div class="banner" role="banner">
+    <h2 class="pageName">Covid Tracker</h2>
+</div>
 <div class="countryTab">
     <div class="search">
        <input type="text" placeholder="search country" name="search" [(ngModel)]="searchInput" (ngModelChange)='searchByCountry()'>
+       <button (click)="clearSelection()">Clear</button>
     </div>
  <div class="countries">
     <div class="list">
@@ -16,7 +20,7 @@
 </div>
 <div class="displayStat">
     <div class="selectedCountry">
-      <div *ngIf="clickedCountry; else showGlobal">
+      <div *ngIf="clickedCountry && !clearTheSelection; else showGlobal">
             <h2>{{clickedCountry}}</h2>
             <span>Confirmed: </span><span id="confirmed">{{confirmed}} </span>
             <span>Deaths: </span><span id="dead">{{death}}  </span>
@@ -24,9 +28,9 @@
       </div>
       <ng-template #showGlobal> 
         <h2>Global</h2>
-        <span>Confirmed: </span><span id="globalConfirmed">{{globalConfirmed}}  </span>
-        <span>Deaths: </span><span id="globalDead">{{globalDeath}}  </span>
-        <span>Recovered:</span><span id="globalRecovered">{{globalRecovered}}</span>
+        <span>Confirmed: </span><span id="globalTotalConfirmed">{{globalTotalConfirmed}}  </span>
+        <span>Deaths: </span><span id="globaltotalDead">{{globalTotalDeath}}  </span>
+        <span>Recovered:</span><span id="globalTotalRecovered">{{globalTotalRecovered}}</span>
      </ng-template>
      </div>
     <div class="stat"></div>

@@ -1,3 +1,16 @@
+.banner{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 24px;
+    background-color: #91fcf6;
+}
+
+.banner .pageName{
+    margin: 0;
+    font-size: 20px;
+    line-height:24px;
+}
+
 .countryTab{
     width:40vh;
     padding: 24px 0 0 24px;
@@ -28,9 +41,10 @@
     padding-bottom: 5px;
 }
 
-.search input{
+.search input button{
  width: 85%;
 }
+
 
 .displayStat{
         border-radius: 5px;
@@ -43,15 +57,15 @@
         font-size:large;
 }
 
-#confirmed, #globalConfirmed{
+#confirmed, #globalTotalConfirmed{
     color:rgb(235, 213, 15);
 }
 
-#dead, #globalDead{
+#dead, #globaltotalDead{
     color:rgba(255, 136, 0, 0.795);
 }
 
-#recovered,#globalRecovered{
+#recovered,#globalTotalRecovered{
     color:rgb(49, 190, 49);
 }
 
@@ -61,5 +75,5 @@
     display:flex;
     height:85vh;
     width:1195px;
-    background-color: #91fcf6;;
+    background-color: #e1e7e7;;
 }
