@@ -41,6 +41,9 @@ export class CountryListComponent implements OnInit {
       this.globalTotalDeath+=this.covidMainData[countryName][this.lastRow].deaths;
       this.globalTotalRecovered+=this.covidMainData[countryName][this.lastRow].recovered;
     })
+
+    this.clearSelection();
+
   }
 
   printCountry(country){
@@ -73,7 +76,9 @@ export class CountryListComponent implements OnInit {
     this.clearTheSelection=true;
     this.searchInput='';
     this.covidData=this.covidMainData;
-
+    this.globalConfirmedList=[];
+    this.globalDeathList=[];
+    this.globalRecoverdList=[];
   
     let totalDays=this.covidMainData.Afghanistan.length-1 /**Check how to generalize this */
    /**for each date sumup the values of each country for that date**/
