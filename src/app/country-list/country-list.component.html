@@ -1,8 +1,10 @@
 <div class="fullPage">
 <div class="banner" role="banner">
     <h2 class="pageName">Covid Tracker</h2>
+    <button (click)="displayMap()">Map View</button>
+    <button (click)="toggleView()">Toggle View</button>
 </div>
-<div class="countryTab">
+<div class="countryTab" *ngIf="!mapView">
     <div class="search">
        <input type="text" placeholder="search country" name="search" [(ngModel)]="searchInput" (ngModelChange)='searchByCountry()'>
        <button (click)="clearSelection()">Clear</button>
@@ -20,7 +22,7 @@
 </div>
 <div class="displayStat">
     <div class="selectedCountry">
-      <div *ngIf="clickedCountry && !clearTheSelection; else showGlobal">
+      <div *ngIf="!clearTheSelection; else showGlobal">
             <h2>{{clickedCountry}}</h2>
             <span>Confirmed: </span><span id="confirmed">{{confirmed}} </span>
             <span>Deaths: </span><span id="dead">{{death}}  </span>
@@ -35,7 +37,10 @@
      </div>
     <div class="stat"></div>
 </div>
-<div class="graph">
-    <canvas id="canvas">{{chart}}</canvas>
+<div class="graph" *ngIf="!mapView">
+    <canvas id="canvas">{{mapView}}{{chart}}</canvas>
+</div>
+<div class="map" *ngIf="mapView">
+    <div id="chartdiv" ></div>
 </div>
 </div>

@@ -19,8 +19,8 @@
     float:left;
     display: flex;
     flex-direction: column;
-    max-height: 100vh;
-    min-height: 100vh;
+    max-height: 93vh;
+    min-height: 93vh;
     border-radius: 5px;
 }
  
@@ -73,7 +73,13 @@
 .graph{
     float:left;
     display:flex;
-    height:85vh;
-    width:1195px;
+    height:80vh;
+    width:157vh;
+    background-color: #e1e7e7;;
+}
+
+.map, #chartdiv{
+    height:80vh;
+    width:200vh;
     background-color: #e1e7e7;;
 }

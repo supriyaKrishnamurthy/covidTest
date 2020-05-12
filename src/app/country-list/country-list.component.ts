@@ -1,7 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import covid from '../../assets/COVID.json';
 import Chart from 'chart.js';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
+import * as am4core from "@amcharts/amcharts4/core";
+import * as am4maps from "@amcharts/amcharts4/maps";
+import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
+import am4themes_dataviz from "@amcharts/amcharts4/themes/dataviz";
+import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+
+
+/* Chart code */
+// Themes begin
+am4core.useTheme(am4themes_dataviz);
+am4core.useTheme(am4themes_animated);
 
 @Component({
   selector: 'app-country-list',
@@ -27,9 +38,9 @@ export class CountryListComponent implements OnInit {
   globalDeathList:Array<number>=[];
   globalRecoverdList:Array<number>=[];
   dateList:[];
+  mapView:boolean=false;
 
-
-  constructor() { }
+  constructor(private zone: NgZone) { }
 
   ngOnInit() {
     this.covidMainData=covid;
@@ -41,13 +52,18 @@ export class CountryListComponent implements OnInit {
       this.globalTotalDeath+=this.covidMainData[countryName][this.lastRow].deaths;
       this.globalTotalRecovered+=this.covidMainData[countryName][this.lastRow].recovered;
     })
-
+    
+    //this.displayMap();
     this.clearSelection();
+  }
 
+  toggleView(){
+   this.mapView=false;
   }
 
   printCountry(country){
     this.clearTheSelection=false;
+              
     this.clickedCountry=country.key;
     this.confirmed=country.value[country.value.length-1].confirmed;
     this.death=country.value[country.value.length-1].deaths;
@@ -60,7 +76,29 @@ export class CountryListComponent implements OnInit {
     let recoveredList=country.value.map(country=>country.recovered);
     
     this.displayChart(this.dateList,confirmedList,deathList,recoveredList);
-     
+  }
+
+  printMap(country, countryName){
+    this.clearTheSelection=false;
+    try{
+    this.clickedCountry=countryName;
+    this.confirmed=country[country.length-1].confirmed;
+    this.death=country[country.length-1].deaths;
+    this.recovered=country[country.length-1].recovered;
+
+    this.dateList=country.map(country=>country.date);
+    let confirmedList=country.map(country=>country.confirmed);
+    let deathList=country.map(country=>country.deaths);
+    let recoveredList=country.map(country=>country.recovered);
+    
+    this.displayChart(this.dateList,confirmedList,deathList,recoveredList);
+    }
+    catch{
+    this.confirmed=0;
+    this.death=0;
+    this.recovered=0;
+    }
+   //console.log(this.clickedCountry,this.confirmed,this.death,this.recovered);
   }
 
   searchByCountry(){
@@ -141,4 +179,72 @@ export class CountryListComponent implements OnInit {
     })
   }
 
+  displayMap() {
+     this.mapView=true;
+
+      let chart = am4core.create("chartdiv", am4maps.MapChart);
+      // Set map definition
+      
+      chart.geodata = am4geodata_worldLow;
+      
+      // Set projection
+      chart.projection = new am4maps.projections.Orthographic();
+      chart.panBehavior = "rotateLongLat";
+      chart.deltaLatitude = -20;
+      chart.padding(20,20,20,20);
+      
+      // limits vertical rotation
+      chart.adapter.add("deltaLatitude", function(delatLatitude){
+          return am4core.math.fitToRange(delatLatitude, -90, 90);
+      })
+      
+      // Create map polygon series
+      let polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+      
+      // Make map load polygon (like country names) data from GeoJSON
+      polygonSeries.useGeodata = true;
+      
+      // Configure series
+      let polygonTemplate = polygonSeries.mapPolygons.template;
+      polygonTemplate.tooltipText = "{name}";
+      polygonTemplate.fill = am4core.color("#56f5ef");
+      polygonTemplate.stroke = am4core.color("#454a58");
+      polygonTemplate.strokeWidth = 0.5;
+      
+            
+      polygonTemplate.events.on("hit", (ev) => {
+        console.log("clicked on ", ev.target.dataItem.dataContext['name']);
+        let countryName=ev.target.dataItem.dataContext['name'];
+        let country=this.covidData[countryName];
+        this.printMap(country, countryName);      
+      },this);
+
+      let graticuleSeries = chart.series.push(new am4maps.GraticuleSeries());
+      graticuleSeries.mapLines.template.line.stroke = am4core.color("#ffffff");
+      graticuleSeries.mapLines.template.line.strokeOpacity = 0.08;
+      graticuleSeries.fitExtent = false;
+      
+      
+      chart.backgroundSeries.mapPolygons.template.polygon.fillOpacity = 10;
+      chart.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#454a58");
+      
+      // Create hover state and set alternative fill color
+      let hs = polygonTemplate.states.create("hover");
+      hs.properties.fill = chart.colors.getIndex(0).brighten(-0.5);
+      
+      let animation;
+      setTimeout(function(){
+        animation = chart.animate({property:"deltaLongitude", to:100000}, 20000000);
+      }, 3000)
+      
+      chart.seriesContainer.events.on("down", function(){
+      if(animation){
+        animation.stop();
+      }
+      })
+      
+    
+  }
+
 }
+
