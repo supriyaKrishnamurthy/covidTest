@@ -1,46 +1,46 @@
 <div class="fullPage">
-<div class="banner" role="banner">
-    <h2 class="pageName">Covid Tracker</h2>
-    <button (click)="displayMap()">Map View</button>
-    <button (click)="toggleView()">Toggle View</button>
-</div>
-<div class="countryTab" *ngIf="!mapView">
-    <div class="search">
-       <input type="text" placeholder="search country" name="search" [(ngModel)]="searchInput" (ngModelChange)='searchByCountry()'>
-       <button (click)="clearSelection()">Clear</button>
+    <div class="banner" role="banner">
+        <h2 class="pageName">Covid Tracker</h2>
+        <button (click)="displayMap()">Map View</button>
+        <button (click)="clearSelection()">Graph View</button>
     </div>
- <div class="countries">
-    <div class="list">
-        <ul>
-            <li *ngFor="let country of covidData | keyvalue" class="countryList">
-                <div class="area" (click)="printCountry(country)">{{country.key}}</div>
-            </li>
-        </ul>
-
+    <div class="countryTab" *ngIf="!showMapView">
+        <div class="search">
+           <input type="text" placeholder="search country" name="search" [(ngModel)]="searchInput" (ngModelChange)='searchByCountry()'>
+           <button (click)="clearSelection()">Clear</button>
+        </div>
+     <div class="countries">
+        <div class="list">
+            <ul>
+                <li *ngFor="let country of covidData | keyvalue" class="countryList">
+                    <div class="area" (click)="printCountry(country)">{{country.key}}</div>
+                </li>
+            </ul>
+    
+        </div>
     </div>
-</div>
-</div>
-<div class="displayStat">
-    <div class="selectedCountry">
-      <div *ngIf="!clearTheSelection; else showGlobal">
-            <h2>{{clickedCountry}}</h2>
-            <span>Confirmed: </span><span id="confirmed">{{confirmed}} </span>
-            <span>Deaths: </span><span id="dead">{{death}}  </span>
-            <span>Recovered: </span><span id="recovered">{{recovered}}</span>
-      </div>
-      <ng-template #showGlobal> 
-        <h2>Global</h2>
-        <span>Confirmed: </span><span id="globalTotalConfirmed">{{globalTotalConfirmed}}  </span>
-        <span>Deaths: </span><span id="globaltotalDead">{{globalTotalDeath}}  </span>
-        <span>Recovered:</span><span id="globalTotalRecovered">{{globalTotalRecovered}}</span>
-     </ng-template>
-     </div>
-    <div class="stat"></div>
-</div>
-<div class="graph" *ngIf="!mapView">
-    <canvas id="canvas">{{mapView}}{{chart}}</canvas>
-</div>
-<div class="map" *ngIf="mapView">
-    <div id="chartdiv" ></div>
-</div>
-</div>
+    </div>
+    <div class="displayStat">
+        <div class="selectedCountry">
+          <div *ngIf="!clearTheSelection; else showGlobal">
+                <h2>{{clickedCountry}}</h2>
+                <span>Confirmed: </span><span id="confirmed">{{confirmed}} </span>
+                <span>Deaths: </span><span id="dead">{{death}}  </span>
+                <span>Recovered: </span><span id="recovered">{{recovered}}</span>
+          </div>
+          <ng-template #showGlobal> 
+            <h2>Global</h2>
+            <span>Confirmed: </span><span id="globalTotalConfirmed">{{globalTotalConfirmed}}  </span>
+            <span>Deaths: </span><span id="globaltotalDead">{{globalTotalDeath}}  </span>
+            <span>Recovered:</span><span id="globalTotalRecovered">{{globalTotalRecovered}}</span>
+         </ng-template>
+         </div>
+        <div class="stat"></div>
+    </div>
+    <div class="graph" *ngIf="!showMapView">
+        <canvas id="canvas">{{chart}}</canvas>
+    </div>
+    <div class="map" *ngIf="showMapView">
+        <div id="chartdiv" ></div>
+    </div>
+    </div>

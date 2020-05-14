@@ -38,7 +38,7 @@ export class CountryListComponent implements OnInit {
   globalDeathList:Array<number>=[];
   globalRecoverdList:Array<number>=[];
   dateList:[];
-  mapView:boolean=false;
+  showMapView:boolean=false;
 
   constructor(private zone: NgZone) { }
 
@@ -52,13 +52,17 @@ export class CountryListComponent implements OnInit {
       this.globalTotalDeath+=this.covidMainData[countryName][this.lastRow].deaths;
       this.globalTotalRecovered+=this.covidMainData[countryName][this.lastRow].recovered;
     })
+
+    this.dateList=this.covidData.Afghanistan.map(country=>country.date);
+
     
     //this.displayMap();
     this.clearSelection();
   }
 
-  toggleView(){
-   this.mapView=false;
+  graphView(){
+   this.showMapView=false;
+  //  this.clearSelection();
   }
 
   printCountry(country){
@@ -98,7 +102,6 @@ export class CountryListComponent implements OnInit {
     this.death=0;
     this.recovered=0;
     }
-   //console.log(this.clickedCountry,this.confirmed,this.death,this.recovered);
   }
 
   searchByCountry(){
@@ -112,6 +115,7 @@ export class CountryListComponent implements OnInit {
 
   clearSelection(){
     this.clearTheSelection=true;
+    this.showMapView=false;
     this.searchInput='';
     this.covidData=this.covidMainData;
     this.globalConfirmedList=[];
@@ -137,8 +141,6 @@ export class CountryListComponent implements OnInit {
         this.globalDeathList.push(globalDeathByDate);
         this.globalRecoverdList.push(globalRecoveredByDate);
    }
-
-   console.log(this.globalConfirmedList,this.globalDeathList,this.globalRecoverdList);
    this.displayChart(this.dateList,this.globalConfirmedList,this.globalDeathList,this.globalRecoverdList);
 
 
@@ -152,13 +154,13 @@ export class CountryListComponent implements OnInit {
         labels:dates,
         datasets: [{ 
             data: confirms,
-            label: "confirmed",
+            label: "Confirmed",
             borderColor: "rgb(235, 213, 15)",
             fill: false
           }, 
            { 
             data:deaths,
-            label: "dead",
+            label: "Dead",
             borderColor: "rgba(255, 136, 0, 0.795)",
             fill: false
           },
@@ -173,14 +175,14 @@ export class CountryListComponent implements OnInit {
       options: {
         title: {
           display: true,
-          text: 'Corona spread analysis'
+          text: 'Corona Spread Analysis'
         }
       }
     })
   }
 
   displayMap() {
-     this.mapView=true;
+     this.showMapView=true;
 
       let chart = am4core.create("chartdiv", am4maps.MapChart);
       // Set map definition
@@ -247,4 +249,3 @@ export class CountryListComponent implements OnInit {
   }
 
 }
-

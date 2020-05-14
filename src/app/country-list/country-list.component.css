@@ -1,8 +1,13 @@
 .banner{
     display: flex;
     justify-content: space-between;
+    color:white;
     padding: 12px 24px;
     background-color: #91fcf6;
+    /* background-image: url(https://i.pinimg.com/originals/3a/3b/7b/3a3b7b936e3ff87016de28ea865cbbb6.jpg); */
+    background-image: url(https://cdn.shopify.com/s/files/1/1775/1671/files/covid_1662701254.jpg?v=1584020812);
+
+
 }
 
 .banner .pageName{
@@ -33,7 +38,7 @@
 }
 
 .area{
-     color:#1ee0c6;
+     color:#56f5ef;
      font-size: medium;
 }
 
@@ -52,7 +57,8 @@
         overflow: hidden; /* if you don't want #second to wrap below #first */
         text-align: center;
         background-color:black;
-        color: #1ee0c6;
+        /* color: #1ee0c6; */
+        color:#56f5ef;
         max-height: 20vh;
         font-size:large;
 }
@@ -70,16 +76,19 @@
 }
 
 
+
 .graph{
     float:left;
     display:flex;
     height:80vh;
-    width:157vh;
-    background-color: #e1e7e7;;
+    width:79.5%;
+    background-color: #e1e7e7;
+    background-image: url('src/covidImage.png');
 }
 
 .map, #chartdiv{
     height:80vh;
-    width:200vh;
-    background-color: #e1e7e7;;
+    width:100%;
+    background-color: #e1e7e7;
+    background-image: url(https://wallpapersite.com/images/wallpapers/nebula-2560x2560-teal-turquoise-4k-8k-15333.jpg);
 }
