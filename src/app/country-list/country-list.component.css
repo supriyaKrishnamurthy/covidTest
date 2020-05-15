@@ -1,20 +1,21 @@
 .banner{
     display: flex;
     justify-content: space-between;
-    color:white;
+    color:#375e5e;
     padding: 12px 24px;
     background-color: #91fcf6;
     /* background-image: url(https://i.pinimg.com/originals/3a/3b/7b/3a3b7b936e3ff87016de28ea865cbbb6.jpg); */
-    background-image: url(https://cdn.shopify.com/s/files/1/1775/1671/files/covid_1662701254.jpg?v=1584020812);
-
-
+    /* background-image: url(https://cdn.shopify.com/s/files/1/1775/1671/files/covid_1662701254.jpg?v=1584020812); */
+    background-image: url('src/bannerImg.jpg');
 }
 
 .banner .pageName{
     margin: 0;
     font-size: 20px;
     line-height:24px;
+    font-size: x-large;
 }
+
 
 .countryTab{
     width:40vh;
@@ -26,7 +27,7 @@
     flex-direction: column;
     max-height: 93vh;
     min-height: 93vh;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
  
 .countries{
@@ -51,8 +52,8 @@
 }
 
 
-.displayStat{
-        border-radius: 5px;
+.displayStat,.toggleViewButtons{
+        /* border-radius: 5px; */
         border: 1px solid rgba(0, 0, 0, 0.1);
         overflow: hidden; /* if you don't want #second to wrap below #first */
         text-align: center;
@@ -61,6 +62,13 @@
         color:#56f5ef;
         max-height: 20vh;
         font-size:large;
+}
+
+#mapButton, #graphButton{
+    background-color:#56f5ef;
+    border-radius: 2px;
+    font-weight: bold;
+    margin:5px;
 }
 
 #confirmed, #globalTotalConfirmed{
@@ -80,15 +88,17 @@
 .graph{
     float:left;
     display:flex;
-    height:80vh;
-    width:79.5%;
+    height:77vh;
+    width:78.8%;
     background-color: #e1e7e7;
     background-image: url('src/covidImage.png');
 }
 
 .map, #chartdiv{
-    height:80vh;
+    height:77vh;
     width:100%;
     background-color: #e1e7e7;
-    background-image: url(https://wallpapersite.com/images/wallpapers/nebula-2560x2560-teal-turquoise-4k-8k-15333.jpg);
+    /* background-image: url(https://wallpapersite.com/images/wallpapers/nebula-2560x2560-teal-turquoise-4k-8k-15333.jpg); */
+    /* background-image: url(https://cdna.artstation.com/p/assets/images/images/005/829/314/large/devin-hansen-astrum-nebula-zoom1.jpg?1494052065); */
+    background-image: url('src/mapImage.jpg');
 }

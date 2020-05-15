@@ -1,0 +1,40 @@
+<div class="flexo">
+  
+    <div class="divAboutUs">
+        <h2>About Us</h2>
+        <p>Supriya Krishnamurthi<br>Basaveshwara Kalapur<br><br>
+        <b>Master of Technology</b><br>
+        <b>Computer Science and Engineering</b><br>
+        <b>Web Technology Mini Project</b><br>
+        <b>BMSCE Bangalore</b></p>
+        
+        <h2>Overview</h2>
+        <p>The COVID-19 is a pandemic disease which has been spread all over the world and millions of people got infected by it.The World Health Organization (WHO)
+            has declared the corona virus disease 2019 (COVID-19) a pandemic. A global coordinated effort is needed to stop the further spread of the virus.A pandemic
+            is defined as “occurring over a wide geographic area and affecting an exceptionally high proportion of the population.” </p>
+        <p>The project tries to guide the people who are looking for real time information about the pandemic.It monitors data regarding COVID-19 affected over the globe.
+            The data contains how many people got infected, cured and deceased at country level.For better understanding andvisualization we plots the line graph for the 
+            same data fetched.</p>
+
+        <h2>Thank You</h2>
+        <p>Keep supporting us.We appriciate it.</p>
+    </div>
+
+    <div class="divContact">
+    <div>
+    <section id="contact-form">
+    <h2>Contact</h2>
+        <form id="contact" name="contact" accept-charset="utf-8" (ngSubmit)="processForm()">
+            <label><span></span><input type="text" name="name" class="input" placeholder="Your Name" [(ngModel)]="name"></label>
+            <label><span></span><input type="email" name="email" class="input" placeholder="Your Email" [(ngModel)]="email"></label>
+            <label><span></span><textarea class="textarea" name="message" placeholder="What's on your mind?" [(ngModel)]="message"></textarea></label>
+             <input type="submit"  value="Send" onclick="exportexcel()" />           
+        </form>
+    </section>
+    </div>
+
+    <div class="covidInfo"></div>
+    </div>
+    
+</div>
+
