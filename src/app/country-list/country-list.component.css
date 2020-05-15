@@ -64,7 +64,7 @@
         font-size:large;
 }
 
-#mapButton, #graphButton{
+#mapButton, #graphButton,#clearButton{
     background-color:#56f5ef;
     border-radius: 2px;
     font-weight: bold;

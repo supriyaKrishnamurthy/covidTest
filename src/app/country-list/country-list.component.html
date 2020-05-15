@@ -7,7 +7,7 @@
     <div class="countryTab" *ngIf="!showMapView">
         <div class="search">
            <input type="text" placeholder="search country" name="search" [(ngModel)]="searchInput" (ngModelChange)='searchByCountry()'>
-           <button (click)="clearSelection()">Clear</button>
+           <button id="clearButton" (click)="clearSelection()">Clear</button>
         </div>
      <div class="countries">
         <div class="list">
