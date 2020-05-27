@@ -67,9 +67,6 @@ export class CountryListComponent implements OnInit {
       this.clearSelection();
     });
 
-    //this.covidMainData=covid;
-    //this.covidData=this.covidMainData;
-
   }
 
   graphView(){
