@@ -7,6 +7,7 @@ import * as am4maps from "@amcharts/amcharts4/maps";
 import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
 import am4themes_dataviz from "@amcharts/amcharts4/themes/dataviz";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+import { HttpClient } from '@angular/common/http';
 
 
 /* Chart code */
@@ -40,24 +41,35 @@ export class CountryListComponent implements OnInit {
   dateList:[];
   showMapView:boolean=false;
 
-  constructor(private zone: NgZone) { }
+  constructor(private zone: NgZone, private http: HttpClient) { }
+
+  
+  getCOVIDTimeSeries(){
+    return this.http.get('https://pomber.github.io/covid19/timeseries.json');
+  }
 
   ngOnInit() {
-    this.covidMainData=covid;
-    this.covidData=this.covidMainData;
 
-    Object.keys(this.covidMainData).forEach(countryName=>{
-      this.lastRow=this.covidMainData[countryName].length-1;
-      this.globalTotalConfirmed+=this.covidMainData[countryName][this.lastRow].confirmed;
-      this.globalTotalDeath+=this.covidMainData[countryName][this.lastRow].deaths;
-      this.globalTotalRecovered+=this.covidMainData[countryName][this.lastRow].recovered;
-    })
+    this.getCOVIDTimeSeries().subscribe(data => {
+      this.covidMainData = data;
+      this.covidData = this.covidMainData;
 
-    this.dateList=this.covidData.Afghanistan.map(country=>country.date);
+      
+      Object.keys(this.covidMainData).forEach(countryName=>{
+        this.lastRow=this.covidMainData[countryName].length-1;
+        this.globalTotalConfirmed+=this.covidMainData[countryName][this.lastRow].confirmed;
+        this.globalTotalDeath+=this.covidMainData[countryName][this.lastRow].deaths;
+        this.globalTotalRecovered+=this.covidMainData[countryName][this.lastRow].recovered;
+      })
 
-    
-    //this.displayMap();
-    this.clearSelection();
+      this.dateList=this.covidData.Afghanistan.map(country=>country.date);
+
+      this.clearSelection();
+    });
+
+    //this.covidMainData=covid;
+    //this.covidData=this.covidMainData;
+
   }
 
   graphView(){
@@ -212,11 +224,15 @@ export class CountryListComponent implements OnInit {
       polygonTemplate.fill = am4core.color("#56f5ef");
       polygonTemplate.stroke = am4core.color("#454a58");
       polygonTemplate.strokeWidth = 0.5;
-      
+
+      console.log(polygonTemplate.tooltipText, this.covidData);
             
       polygonTemplate.events.on("hit", (ev) => {
         console.log("clicked on ", ev.target.dataItem.dataContext['name']);
         let countryName=ev.target.dataItem.dataContext['name'];
+        if( countryName === 'United States'){
+          countryName = 'US';
+        }
         let country=this.covidData[countryName];
         this.printMap(country, countryName);      
       },this);
