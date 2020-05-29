@@ -1,3 +1,92 @@
+h2 {
+  margin:0;
+  color:floralwhite;
+  font-size: 1.5em;
+  font-weight: 300;
+}
+#contact-form {
+  vertical-align: top;
+  display: inline-block;
+  width: 50%;
+  text-align: left;
+  line-height: 1.5;
+  margin-left: 25%;
+  margin-bottom:2%;
+}
+#contact-form:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+#contact{
+  margin-bottom: 3%;
+  margin-top: 3%;
+  position: relative;
+}
+input, textarea, button {
+  width: 100%;
+  padding: 0.5em;
+  border: none;
+  font: 300 100%/1.2 Ubuntu, sans-serif;
+}
+input[type="text"], input[type="email"], textarea {
+  margin: 0 0 1em;
+  border: 1px solid #ccc;
+  outline: none;
+}
+input.invalid, textarea.invalid {
+  border-color: #d5144d;
+}
+textarea {
+  height: 6em;
+}
+input[type="submit"], button {
+  background: #375e5e;
+  color:floralwhite;
+  width: 103%;
+}
+
+.divAboutUs {
+width:20%;
+display:block;
+float: left;
+min-height: 91.3vh;
+text-align: justify;
+background-color: #375e5e;
+color: #a1aab3;
+}
+
+.divAboutUs h2,p{
+padding:0 20px 0 20px;
+}
+
+
+.divContact {
+width: 80%;
+display:block;
+float: left;
+background-image: url("src/covidImage.png");
+background-repeat: no-repeat;
+background-size: 100% 100%;
+
+}
+.covidInfo{
+width:100%;
+margin-top: 5%;
+background-image: url("src/safety.png");
+height :34vh;
+background-repeat: no-repeat;
+background-size: cover;
+background-size: 100% 100%;
+
+}
+
+.covidInfo p{
+text-align: justify;
+
+}
+
 @media screen and (min-device-width: 890px) {
       h2 {
         margin:0;
