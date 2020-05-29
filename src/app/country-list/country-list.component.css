@@ -87,17 +87,17 @@
     /* background-image: url(https://cdna.artstation.com/p/assets/images/images/005/829/314/large/devin-hansen-astrum-nebula-zoom1.jpg?1494052065); */
     background-image: url('src/mapImage.jpg');
 }
-@media screen and (min-device-width: 890px) {
+@media screen and (min-device-width: 670px) {
 
     .countryTab{
-        width:21%;
-        padding: 24px 0 0 24px;
+        width:30%;
+        padding: 3px 0 0 5px;
         box-sizing: border-box;
         background-color: rgb(10, 12, 12);
         float:left;
         display: flex;
         flex-direction: column;
-        max-height: 116vh;
+        max-height: 108vh;
         /* min-height: 100vh; */
     }
      
@@ -123,8 +123,192 @@
         padding-bottom: 5px;
     }
     
-    .search input button{
-        width: 85%;
+    
+    #searchbox{
+        width: 66%;
+       }
+    
+    
+    .displayStat,.toggleViewButtons{
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* if you don't want #second to wrap below #first */
+            text-align: center;
+            background-color:black;
+            color:#56f5ef;
+            max-height: 20%;
+            font-size:large;
+    }
+    
+    #mapButton, #graphButton,#clearButton{
+        background-color:#56f5ef;
+        border-radius: 2px;
+        font-weight: bold;
+        margin:5px;
+    }
+    
+    #confirmed, #globalTotalConfirmed{
+        color:rgb(235, 213, 15);
+    }
+    
+    #dead, #globaltotalDead{
+        color:rgba(255, 136, 0, 0.795);
+    }
+    
+    #recovered,#globalTotalRecovered{
+        color:rgb(49, 190, 49);
+    }
+    
+    
+    
+    .graph,#canvas{
+        float:left;
+        display:flex;
+        height:71vh;
+        width:70%;
+        background-color: #e1e7e7;
+        background-image: url('src/covidImage.png');
+    }
+    
+    .map, #chartdiv{
+        height:77vh;
+        width:100%;
+        background-color: #e1e7e7;
+        /* background-image: url(https://wallpapersite.com/images/wallpapers/nebula-2560x2560-teal-turquoise-4k-8k-15333.jpg); */
+        /* background-image: url(https://cdna.artstation.com/p/assets/images/images/005/829/314/large/devin-hansen-astrum-nebula-zoom1.jpg?1494052065); */
+        background-image: url('src/mapImage.jpg');
+    }
+}
+@media screen and (min-device-width: 750px) {
+
+    .countryTab{
+        width:21%;
+        padding: 3px 0 0 5px;
+        box-sizing: border-box;
+        background-color: rgb(10, 12, 12);
+        float:left;
+        display: flex;
+        flex-direction: column;
+        max-height: 103.2vh;
+        /* min-height: 100vh; */
+    }
+     
+    .countries{
+        overflow:hidden;
+        overflow-y:scroll;
+    }
+    .countryList{
+        list-style-type: none;
+    }
+    
+    .area{
+         color:#56f5ef;
+         font-size: medium;
+    }
+
+    .area:hover{
+        background-color: gray;
+        width: fit-content;
+    }
+    
+    .search{
+        padding-bottom: 5px;
+    }
+    
+    
+    #searchbox{
+        width: 57%;
+       }
+    
+    
+    .displayStat,.toggleViewButtons{
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* if you don't want #second to wrap below #first */
+            text-align: center;
+            background-color:black;
+            color:#56f5ef;
+            max-height: 20%;
+            font-size:large;
+    }
+    
+    #mapButton, #graphButton,#clearButton{
+        background-color:#56f5ef;
+        border-radius: 2px;
+        font-weight: bold;
+        margin:5px;
+    }
+    
+    #confirmed, #globalTotalConfirmed{
+        color:rgb(235, 213, 15);
+    }
+    
+    #dead, #globaltotalDead{
+        color:rgba(255, 136, 0, 0.795);
+    }
+    
+    #recovered,#globalTotalRecovered{
+        color:rgb(49, 190, 49);
+    }
+    
+    
+    
+    .graph,#canvas{
+        float:left;
+        display:flex;
+        height:71vh;
+        width:79%;
+        background-color: #e1e7e7;
+        background-image: url('src/covidImage.png');
+    }
+    
+    .map, #chartdiv{
+        height:77vh;
+        width:100%;
+        background-color: #e1e7e7;
+        /* background-image: url(https://wallpapersite.com/images/wallpapers/nebula-2560x2560-teal-turquoise-4k-8k-15333.jpg); */
+        /* background-image: url(https://cdna.artstation.com/p/assets/images/images/005/829/314/large/devin-hansen-astrum-nebula-zoom1.jpg?1494052065); */
+        background-image: url('src/mapImage.jpg');
+    }
+    }
+
+
+@media screen and (min-device-width: 1366px) {
+
+    .countryTab{
+        width:22%;
+        padding: 24px 0 0 24px;
+        box-sizing: border-box;
+        background-color: rgb(10, 12, 12);
+        float:left;
+        display: flex;
+        flex-direction: column;
+        max-height: 93vh;
+        min-height: 93vh;
+    }
+     
+    .countries{
+        overflow:hidden;
+        overflow-y:scroll;
+    }
+    .countryList{
+        list-style-type: none;
+    }
+    
+    .area{
+         color:#56f5ef;
+         font-size: medium;
+    }
+    
+    .area:hover{
+        background-color: gray;
+        width: fit-content;
+    }
+    
+    .search{
+        padding-bottom: 5px;
+    }
+    
+    #searchbox{
+        width: 76%;
        }
     
     
@@ -163,8 +347,8 @@
     .graph,#canvas{
         float:left;
         display:flex;
-        height:77vh;
-        width:79%;
+        height:75.8vh;
+        width:78%;
         background-color: #e1e7e7;
         background-image: url('src/covidImage.png');
     }
@@ -179,95 +363,94 @@
     }
     }
 
+    @media screen and (min-device-width: 1500px) {
 
-@media screen and (min-device-width: 1200px) {
-
-.countryTab{
-    width:21%;
-    padding: 24px 0 0 24px;
-    box-sizing: border-box;
-    background-color: rgb(10, 12, 12);
-    float:left;
-    display: flex;
-    flex-direction: column;
-    max-height: 93vh;
-    min-height: 93vh;
-}
- 
-.countries{
-    overflow:hidden;
-    overflow-y:scroll;
-}
-.countryList{
-    list-style-type: none;
-}
-
-.area{
-     color:#56f5ef;
-     font-size: medium;
-}
-
-.area:hover{
-    background-color: gray;
-    width: fit-content;
-}
-
-.search{
-    padding-bottom: 5px;
-}
-
-.search input button{
-    width: 85%;
-   }
-
-
-
-.displayStat,.toggleViewButtons{
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        overflow: hidden; /* if you don't want #second to wrap below #first */
-        text-align: center;
-        background-color:black;
-        color:#56f5ef;
-        max-height: 20%;
-        font-size:large;
-}
-
-#mapButton, #graphButton,#clearButton{
-    background-color:#56f5ef;
-    border-radius: 2px;
-    font-weight: bold;
-    margin:5px;
-}
-
-#confirmed, #globalTotalConfirmed{
-    color:rgb(235, 213, 15);
-}
-
-#dead, #globaltotalDead{
-    color:rgba(255, 136, 0, 0.795);
-}
-
-#recovered,#globalTotalRecovered{
-    color:rgb(49, 190, 49);
-}
-
-
-
-.graph,#canvas{
-    float:left;
-    display:flex;
-    height:76vh;
-    width:79%;
-    background-color: #e1e7e7;
-    background-image: url('src/covidImage.png');
-}
-
-.map, #chartdiv{
-    height:77vh;
-    width:100%;
-    background-color: #e1e7e7;
-    /* background-image: url(https://wallpapersite.com/images/wallpapers/nebula-2560x2560-teal-turquoise-4k-8k-15333.jpg); */
-    /* background-image: url(https://cdna.artstation.com/p/assets/images/images/005/829/314/large/devin-hansen-astrum-nebula-zoom1.jpg?1494052065); */
-    background-image: url('src/mapImage.jpg');
-}
-}
+        .countryTab{
+            width:22%;
+            padding: 24px 0 0 24px;
+            box-sizing: border-box;
+            background-color: rgb(10, 12, 12);
+            float:left;
+            display: flex;
+            flex-direction: column;
+            max-height: 92.6vh;
+            min-height: 92.6vh;
+        }
+         
+        .countries{
+            overflow:hidden;
+            overflow-y:scroll;
+        }
+        .countryList{
+            list-style-type: none;
+        }
+        
+        .area{
+             color:#56f5ef;
+             font-size: medium;
+        }
+        
+        .area:hover{
+            background-color: gray;
+            width: fit-content;
+        }
+        
+        .search{
+            padding-bottom: 5px;
+        }
+        
+        #searchbox{
+            width: 79%;
+           }
+        
+        
+        
+        .displayStat,.toggleViewButtons{
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                overflow: hidden; /* if you don't want #second to wrap below #first */
+                text-align: center;
+                background-color:black;
+                color:#56f5ef;
+                max-height: 20%;
+                font-size:large;
+        }
+        
+        #mapButton, #graphButton,#clearButton{
+            background-color:#56f5ef;
+            border-radius: 2px;
+            font-weight: bold;
+            margin:5px;
+        }
+        
+        #confirmed, #globalTotalConfirmed{
+            color:rgb(235, 213, 15);
+        }
+        
+        #dead, #globaltotalDead{
+            color:rgba(255, 136, 0, 0.795);
+        }
+        
+        #recovered,#globalTotalRecovered{
+            color:rgb(49, 190, 49);
+        }
+        
+        
+        
+        .graph,#canvas{
+            float:left;
+            display:flex;
+            height:76vh;
+            width:78%;
+            background-color: #e1e7e7;
+            background-image: url('src/covidImage.png');
+        }
+        
+        .map, #chartdiv{
+            height:77vh;
+            width:100%;
+            background-color: #e1e7e7;
+            /* background-image: url(https://wallpapersite.com/images/wallpapers/nebula-2560x2560-teal-turquoise-4k-8k-15333.jpg); */
+            /* background-image: url(https://cdna.artstation.com/p/assets/images/images/005/829/314/large/devin-hansen-astrum-nebula-zoom1.jpg?1494052065); */
+            background-image: url('src/mapImage.jpg');
+        }
+        }
