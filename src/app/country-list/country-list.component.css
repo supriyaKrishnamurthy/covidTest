@@ -1,24 +1,100 @@
-.banner{
-    display: flex;
-    justify-content: space-between;
-    color:#375e5e;
-    padding: 12px 24px;
-    background-color: #91fcf6;
-    /* background-image: url(https://i.pinimg.com/originals/3a/3b/7b/3a3b7b936e3ff87016de28ea865cbbb6.jpg); */
-    /* background-image: url(https://cdn.shopify.com/s/files/1/1775/1671/files/covid_1662701254.jpg?v=1584020812); */
-    background-image: url('src/bannerImg.jpg');
-}
+@media screen and (min-device-width: 890px) {
 
-.banner .pageName{
-    margin: 0;
-    font-size: 20px;
-    line-height:24px;
-    font-size: x-large;
-}
+    .countryTab{
+        width:21%;
+        padding: 24px 0 0 24px;
+        box-sizing: border-box;
+        background-color: rgb(10, 12, 12);
+        float:left;
+        display: flex;
+        flex-direction: column;
+        max-height: 116vh;
+        /* min-height: 100vh; */
+    }
+     
+    .countries{
+        overflow:hidden;
+        overflow-y:scroll;
+    }
+    .countryList{
+        list-style-type: none;
+    }
+    
+    .area{
+         color:#56f5ef;
+         font-size: medium;
+    }
 
+    .area:hover{
+        background-color: gray;
+        width: fit-content;
+    }
+    
+    .search{
+        padding-bottom: 5px;
+    }
+    
+    .search input button{
+        width: 85%;
+       }
+    
+    
+    
+    .displayStat,.toggleViewButtons{
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* if you don't want #second to wrap below #first */
+            text-align: center;
+            background-color:black;
+            color:#56f5ef;
+            max-height: 20%;
+            font-size:large;
+    }
+    
+    #mapButton, #graphButton,#clearButton{
+        background-color:#56f5ef;
+        border-radius: 2px;
+        font-weight: bold;
+        margin:5px;
+    }
+    
+    #confirmed, #globalTotalConfirmed{
+        color:rgb(235, 213, 15);
+    }
+    
+    #dead, #globaltotalDead{
+        color:rgba(255, 136, 0, 0.795);
+    }
+    
+    #recovered,#globalTotalRecovered{
+        color:rgb(49, 190, 49);
+    }
+    
+    
+    
+    .graph,#canvas{
+        float:left;
+        display:flex;
+        height:77vh;
+        width:79%;
+        background-color: #e1e7e7;
+        background-image: url('src/covidImage.png');
+    }
+    
+    .map, #chartdiv{
+        height:77vh;
+        width:100%;
+        background-color: #e1e7e7;
+        /* background-image: url(https://wallpapersite.com/images/wallpapers/nebula-2560x2560-teal-turquoise-4k-8k-15333.jpg); */
+        /* background-image: url(https://cdna.artstation.com/p/assets/images/images/005/829/314/large/devin-hansen-astrum-nebula-zoom1.jpg?1494052065); */
+        background-image: url('src/mapImage.jpg');
+    }
+    }
+
+
+@media screen and (min-device-width: 1200px) {
 
 .countryTab{
-    width:40vh;
+    width:21%;
     padding: 24px 0 0 24px;
     box-sizing: border-box;
     background-color: rgb(10, 12, 12);
@@ -27,7 +103,6 @@
     flex-direction: column;
     max-height: 93vh;
     min-height: 93vh;
-    /* border-radius: 5px; */
 }
  
 .countries{
@@ -43,24 +118,28 @@
      font-size: medium;
 }
 
+.area:hover{
+    background-color: gray;
+    width: fit-content;
+}
+
 .search{
     padding-bottom: 5px;
 }
 
 .search input button{
- width: 85%;
-}
+    width: 85%;
+   }
+
 
 
 .displayStat,.toggleViewButtons{
-        /* border-radius: 5px; */
         border: 1px solid rgba(0, 0, 0, 0.1);
         overflow: hidden; /* if you don't want #second to wrap below #first */
         text-align: center;
         background-color:black;
-        /* color: #1ee0c6; */
         color:#56f5ef;
-        max-height: 20vh;
+        max-height: 20%;
         font-size:large;
 }
 
@@ -85,11 +164,11 @@
 
 
 
-.graph{
+.graph,#canvas{
     float:left;
     display:flex;
-    height:77vh;
-    width:78.9%;
+    height:76vh;
+    width:79%;
     background-color: #e1e7e7;
     background-image: url('src/covidImage.png');
 }
@@ -101,4 +180,5 @@
     /* background-image: url(https://wallpapersite.com/images/wallpapers/nebula-2560x2560-teal-turquoise-4k-8k-15333.jpg); */
     /* background-image: url(https://cdna.artstation.com/p/assets/images/images/005/829/314/large/devin-hansen-astrum-nebula-zoom1.jpg?1494052065); */
     background-image: url('src/mapImage.jpg');
+}
 }

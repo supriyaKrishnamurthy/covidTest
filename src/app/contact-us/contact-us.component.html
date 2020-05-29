@@ -25,10 +25,10 @@
     <section id="contact-form">
     <h2>Contact</h2>
         <form id="contact" name="contact" accept-charset="utf-8" (ngSubmit)="processForm()">
-            <label><span></span><input type="text" name="name" class="input" placeholder="Your Name" [(ngModel)]="name"></label>
-            <label><span></span><input type="email" name="email" class="input" placeholder="Your Email" [(ngModel)]="email"></label>
-            <label><span></span><textarea class="textarea" name="message" placeholder="What's on your mind?" [(ngModel)]="message"></textarea></label>
-             <input type="submit"  value="Send" onclick="exportexcel()" />           
+            <input type="text" name="name" class="input" placeholder="Your Name" [(ngModel)]="name">
+            <input type="email" name="email" class="input" placeholder="Your Email" [(ngModel)]="email">
+            <textarea class="textarea" name="message" placeholder="What's on your mind?" [(ngModel)]="message"></textarea>
+            <input type="submit"  value="Send" onclick="exportexcel()" />           
         </form>
     </section>
     </div>

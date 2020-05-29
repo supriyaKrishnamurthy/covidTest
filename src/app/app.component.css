@@ -1,26 +1,63 @@
+@media screen and (min-device-width: 890px) {
+
+    .banner{
+        display: flex;
+        justify-content: space-between;
+        color:#375e5e;
+        padding: 12px 24px;
+        background-color: #91fcf6;
+        background-image: url('src/bannerImg.jpg');
+        height: 10%;
+    }
+    
+    .banner h1{
+        margin: 0;
+        font-size: 20px;
+        line-height:24px;
+        font-size: larger;
+        width:20%;
+    }
+    
+    #home{
+        color:floralwhite;
+        text-decoration: none;
+        float: right;
+        margin-left: 60%;
+    }
+    
+    #contact{
+        color:floralwhite;
+        float: right;
+        margin-left: 2%;
+        text-decoration: none;    
+    }
+    
+}
+@media screen and (min-device-width: 1200px) {
+
 .banner{
     display: flex;
     justify-content: space-between;
     color:#375e5e;
     padding: 12px 24px;
     background-color: #91fcf6;
-    /* background-image: url(https://i.pinimg.com/originals/3a/3b/7b/3a3b7b936e3ff87016de28ea865cbbb6.jpg); */
-    /* background-image: url(https://cdn.shopify.com/s/files/1/1775/1671/files/covid_1662701254.jpg?v=1584020812); */
     background-image: url('src/bannerImg.jpg');
+    height: 10%;
 }
 
-.banner .pageName{
+.banner h1{
     margin: 0;
     font-size: 20px;
     line-height:24px;
     font-size: x-large;
+    width:20%;
 }
 
 #home{
     color:floralwhite;
     text-decoration: none;
     float: right;
-    margin-left: 75%;
+    margin-left: 70%;
 }
 
 #contact{
@@ -30,3 +67,7 @@
     text-decoration: none;
 
 }
+
+}
+
+

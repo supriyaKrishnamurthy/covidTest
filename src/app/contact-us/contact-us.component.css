@@ -1,110 +1,147 @@
-html {
-    font: 300 100%/1.5 Ubuntu, sans-serif;
-    color: #333;
-    overflow-x: hidden;
-  }
-  h2 {
-    margin:0;
-    color:floralwhite;
-    font-size: 1.5em;
-    font-weight: 300;
-  }
-  #contact-form {
-    max-width: 1208px;
-    max-width: 75.5rem;
-    margin: 0 auto;
-  }
-  #contact, label, input[name="submit"] {
-    position: relative;
-  }
-  label > span, input, textarea, button {
-    box-sizing: border-box;
-  }
-  label {
-    display: block;
-  }
-  label > span {
-    display: none;
-  }
-  input, textarea, button {
-    width: 100%;
-    padding: 0.5em;
-    border: none;
-    font: 300 100%/1.2 Ubuntu, sans-serif;
-  }
-  input[type="text"], input[type="email"], textarea {
-    margin: 0 0 1em;
-    border: 1px solid #ccc;
-    outline: none;
-  }
-  input.invalid, textarea.invalid {
-    border-color: #d5144d;
-  }
-  textarea {
-    height: 6em;
-  }
-  input[type="submit"], button {
-    background: #375e5e;
-    color:floralwhite;
-  }
-  /* input[type="submit"]:hover, button:hover {
-    background: #91b36f; */
-  /* } */
-  @media screen and (min-width: 30em) {
-    #contact-form h2 {
-      margin-left: 26.3736%;
-      font-size: 1.5em;
-      line-height: 1.5;
-      color:floralwhite;
+@media screen and (min-device-width: 890px) {
+      h2 {
+        margin:0;
+        color:floralwhite;
+        font-size: 1.5em;
+        font-weight: 300;
+      }
+      #contact-form {
+        vertical-align: top;
+        display: inline-block;
+        width: 50%;
+        text-align: left;
+        line-height: 1.5;
+        margin-left: 20%;
+        margin-bottom: 25%;
+
+      }
+      #contact-form:after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+      }
+
+      #contact{
+        margin-bottom: 3%;
+        margin-top: 10%;
+        position: relative;
+      }
+      input, textarea, button {
+        width: 100%;
+        padding: 0.5em;
+        border: none;
+        font: 300 100%/1.2 Ubuntu, sans-serif;
+      }
+      input[type="text"], input[type="email"], textarea {
+        margin: 0 0 1em;
+        border: 1px solid #ccc;
+        outline: none;
+      }
+      input.invalid, textarea.invalid {
+        border-color: #d5144d;
+      }
+      textarea {
+        height: 6em;
+      }
+      input[type="submit"], button {
+        background: #375e5e;
+        color:floralwhite;
+        width: 107%;
+      }
+
+    .divAboutUs {
+      width:45%;
+      display:block;
+      float: left;
+      min-height: 91.5vh;
+      text-align: justify;
+      background-color: #375e5e;
+      color: #a1aab3;
     }
-    label > span {
+
+    .divAboutUs h2,p{
+      padding:0 20px 0 20px;
+    }
+
+
+    .divContact {
+    width: 55%;
+    display:block;
+    float: left;
+    background-image: url("src/covidImage.png");
+    background-size: 595px 565px;
+    }
+    .covidInfo{
+    width:100%;
+    margin-top: 1%;
+    background-image: url("src/safety.png");
+    height :34vh;
+    background-repeat: no-repeat;
+    background-size: 481.8px 140.07px;
+    }
+
+
+    .covidInfo p{
+      text-align: justify;
+
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    h2 {
+      margin:0;
+      color:floralwhite;
+      font-size: 1.5em;
+      font-weight: 300;
+    }
+    #contact-form {
       vertical-align: top;
       display: inline-block;
-      width: 26.3736%;
-      padding: 0.5em;
-      border: 1px solid transparent;
-      text-align: right;
-    }
-    input, textarea, button {
-      width: 73.6263%;
+      width: 50%;
+      text-align: left;
       line-height: 1.5;
-    }
-    textarea {
-      height: 10em;
-    }
-    input[type="submit"], button {
-      margin-left: 26.3736%;
-    }
-  }
-  @media screen and (min-width: 48em) {
-    #contact-form {
-      text-align: justify;
-      line-height: 0;
+      margin-left: 25%;
+      margin-bottom:2%;
     }
     #contact-form:after {
       content: '';
       display: inline-block;
       width: 100%;
     }
-    #contact-form h2 {
-      margin-left: 17.2661%;
+  
+    #contact{
+      margin-bottom: 3%;
+      margin-top: 3%;
+      position: relative;
     }
-    #contact-form form, #contact-form aside {
-      vertical-align: top;
-      display: inline-block;
-      width: 65.4676%;
-      text-align: left;
-      line-height: 1.5;
+    input, textarea, button {
+      width: 100%;
+      padding: 0.5em;
+      border: none;
+      font: 300 100%/1.2 Ubuntu, sans-serif;
     }
-    #contact-form aside {
-      width: 30.9353%;
+    input[type="text"], input[type="email"], textarea {
+      margin: 0 0 1em;
+      border: 1px solid #ccc;
+      outline: none;
     }
-  }
+    input.invalid, textarea.invalid {
+      border-color: #d5144d;
+    }
+    textarea {
+      height: 6em;
+    }
+    input[type="submit"], button {
+      background: #375e5e;
+      color:floralwhite;
+      width: 103%;
+    }
+
   .divAboutUs {
     width:20%;
     display:block;
     float: left;
-    min-height: 91.5vh;
+    min-height: 91.3vh;
     text-align: justify;
     background-color: #375e5e;
     color: #a1aab3;
@@ -116,33 +153,28 @@ html {
 
 
 .divContact {
- width: 80%;
+  width: 80%;
   display:block;
   float: left;
   background-image: url("src/covidImage.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 
 }
 .covidInfo{
   width:100%;
-  margin-top: 8%;
+  margin-top: 5%;
   background-image: url("src/safety.png");
   height :34vh;
   background-repeat: no-repeat;
   background-size: cover;
-}
+  background-size: 100% 100%;
 
+}
 
 .covidInfo p{
     text-align: justify;
 
 }
 
-a.export,
-a.export:visited {
-  display: inline-block;
-  text-decoration: none;
-  color: #000;
- background-color: #ddd;
- border: 1px solid #ccc;
- padding: 8px;
 }
