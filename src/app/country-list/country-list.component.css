@@ -97,7 +97,7 @@
         float:left;
         display: flex;
         flex-direction: column;
-        max-height: 108vh;
+        max-height: 120vh;
         /* min-height: 100vh; */
     }
      
@@ -281,7 +281,7 @@
         float:left;
         display: flex;
         flex-direction: column;
-        max-height: 93vh;
+        max-height: 102vh;
         min-height: 93vh;
     }
      

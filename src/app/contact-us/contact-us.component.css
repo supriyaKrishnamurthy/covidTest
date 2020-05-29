@@ -100,7 +100,7 @@ text-align: justify;
     text-align: left;
     line-height: 1.5;
     margin-left: 16%;
-    margin-bottom: 17%;
+    margin-bottom: 38%;
 
   }
   #contact-form:after {
@@ -157,7 +157,7 @@ width: 55%;
 display:block;
 float: left;
 background-image: url("src/covidImage.png");
-background-size: 360px 650px;
+background-size: 360px 750px;
 }
 .covidInfo{
 width:100%;
@@ -165,7 +165,7 @@ margin-top:53%;
 background-image: url("src/safety.png");
 height :34vh;
 background-repeat: no-repeat;
-background-size: 364.8px 140.07px;
+background-size: 359.8px 140.07px;
 }
 
 
