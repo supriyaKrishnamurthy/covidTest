@@ -101,7 +101,7 @@
     }
     
 }
-@media screen and (min-device-width: 1200px) {
+@media screen and (min-device-width: 1366px) {
 
 .banner{
     display: flex;
@@ -125,7 +125,7 @@
     color:floralwhite;
     text-decoration: none;
     float: right;
-    margin-left: 70%;
+    margin-left: 65%;
 }
 
 #contact{
@@ -138,7 +138,7 @@
 
 }
 
-@media screen and (min-device-width: 1366px) {
+@media screen and (min-device-width: 1500px) {
 
     .banner{
         display: flex;

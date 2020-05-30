@@ -281,9 +281,9 @@
         float:left;
         display: flex;
         flex-direction: column;
-        max-height: 102vh;
-        min-height: 93vh;
-    }
+        max-height: 187vh;
+        min-height: 187vh;
+  }
      
     .countries{
         overflow:hidden;
@@ -308,7 +308,7 @@
     }
     
     #searchbox{
-        width: 76%;
+        width: 74%;
        }
     
     
