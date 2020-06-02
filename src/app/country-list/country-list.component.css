@@ -19,8 +19,8 @@
     float:left;
     display: flex;
     flex-direction: column;
-    max-height: 45vh;
-    min-height: 45vh;
+    max-height: 25vh;
+    min-height: 25vh;
     align-content: center;
 }
  
@@ -93,7 +93,8 @@
 .graph,#canvas{
     float:left;
     display:flex;
-    height:28vh;
+    position: relative;
+    height:50vh;
     width:100%;
     background-color: #e1e7e7;
     background-image: url('src/covidImage.png');
@@ -375,7 +376,7 @@
         .graph,#canvas{
             float:left;
             display:flex;
-            height:81.6vh;
+            height:81.9vh;
             width:78%;
             background-color: #e1e7e7;
             background-image: url('src/covidImage.png');

@@ -182,6 +182,7 @@ export class CountryListComponent implements OnInit {
         ]
       },
       options: {
+        maintainAspectRatio: false,
         title: {
           display: true,
           text: 'Corona Spread Analysis'
