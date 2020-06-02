@@ -1,14 +1,27 @@
+* {
+    margin:0px;
+}
 
+.fullpage {
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+.fullpage div:countryTab{
+    order:1;
+}
 .countryTab{
-    width:21%;
+    width:100%;
     padding: 24px 0 0 24px;
     box-sizing: border-box;
     background-color: rgb(10, 12, 12);
     float:left;
     display: flex;
     flex-direction: column;
-    max-height: 93vh;
-    min-height: 93vh;
+    max-height: 45vh;
+    min-height: 45vh;
+    align-content: center;
 }
  
 .countries{
@@ -33,12 +46,15 @@
     padding-bottom: 5px;
 }
 
-.search input button{
-    width: 85%;
+#searchbox{
+    width: 66%;
    }
 
 
-
+.fullpage div:displayStat{
+    order:2;
+    width: 100%;
+}
 .displayStat,.toggleViewButtons{
         border: 1px solid rgba(0, 0, 0, 0.1);
         overflow: hidden; /* if you don't want #second to wrap below #first */
@@ -47,6 +63,8 @@
         color:#56f5ef;
         max-height: 20%;
         font-size:large;
+        line-height:24px;
+
 }
 
 #mapButton, #graphButton,#clearButton{
@@ -68,15 +86,19 @@
     color:rgb(49, 190, 49);
 }
 
-
+.fullpage div:graph{
+    order:3;
+}
 
 .graph,#canvas{
     float:left;
     display:flex;
-    height:76vh;
-    width:79%;
+    height:28vh;
+    width:100%;
     background-color: #e1e7e7;
     background-image: url('src/covidImage.png');
+    background-size: 100% 100%;
+
 }
 
 .map, #chartdiv{
@@ -87,7 +109,9 @@
     /* background-image: url(https://cdna.artstation.com/p/assets/images/images/005/829/314/large/devin-hansen-astrum-nebula-zoom1.jpg?1494052065); */
     background-image: url('src/mapImage.jpg');
 }
-@media screen and (min-device-width: 670px) {
+
+
+@media only screen and (min-device-width: 800px) {
 
     .countryTab{
         width:30%;
@@ -97,8 +121,8 @@
         float:left;
         display: flex;
         flex-direction: column;
-        max-height: 120vh;
-        /* min-height: 100vh; */
+        max-height: 94.8vh;
+        min-height: 94.8vh;
     }
      
     .countries{
@@ -164,9 +188,10 @@
         float:left;
         display:flex;
         height:71vh;
-        width:70%;
+        width:70%; 
         background-color: #e1e7e7;
         background-image: url('src/covidImage.png');
+        background-size: 100% 100%;
     }
     
     .map, #chartdiv{
@@ -176,99 +201,8 @@
         /* background-image: url(https://wallpapersite.com/images/wallpapers/nebula-2560x2560-teal-turquoise-4k-8k-15333.jpg); */
         /* background-image: url(https://cdna.artstation.com/p/assets/images/images/005/829/314/large/devin-hansen-astrum-nebula-zoom1.jpg?1494052065); */
         background-image: url('src/mapImage.jpg');
-    }
-}
-@media screen and (min-device-width: 750px) {
-
-    .countryTab{
-        width:21%;
-        padding: 3px 0 0 5px;
-        box-sizing: border-box;
-        background-color: rgb(10, 12, 12);
-        float:left;
-        display: flex;
-        flex-direction: column;
-        max-height: 117.2vh;
-        /* min-height: 100vh; */
-    }
-     
-    .countries{
-        overflow:hidden;
-        overflow-y:scroll;
-    }
-    .countryList{
-        list-style-type: none;
-    }
-    
-    .area{
-         color:#56f5ef;
-         font-size: medium;
-    }
-
-    .area:hover{
-        background-color: gray;
-        width: fit-content;
-    }
-    
-    .search{
-        padding-bottom: 5px;
-    }
-    
-    
-    #searchbox{
-        width: 57%;
-       }
-    
-    
-    .displayStat,.toggleViewButtons{
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            overflow: hidden; /* if you don't want #second to wrap below #first */
-            text-align: center;
-            background-color:black;
-            color:#56f5ef;
-            max-height: 20%;
-            font-size:large;
-    }
-    
-    #mapButton, #graphButton,#clearButton{
-        background-color:#56f5ef;
-        border-radius: 2px;
-        font-weight: bold;
-        margin:5px;
-    }
-    
-    #confirmed, #globalTotalConfirmed{
-        color:rgb(235, 213, 15);
-    }
-    
-    #dead, #globaltotalDead{
-        color:rgba(255, 136, 0, 0.795);
-    }
-    
-    #recovered,#globalTotalRecovered{
-        color:rgb(49, 190, 49);
-    }
-    
-    
-    
-    .graph,#canvas{
-        float:left;
-        display:flex;
-        height:71vh;
-        width:79%;
-        background-color: #e1e7e7;
-        background-image: url('src/covidImage.png');
-    }
-    
-    .map, #chartdiv{
-        height:77vh;
-        width:100%;
-        background-color: #e1e7e7;
-        /* background-image: url(https://wallpapersite.com/images/wallpapers/nebula-2560x2560-teal-turquoise-4k-8k-15333.jpg); */
-        /* background-image: url(https://cdna.artstation.com/p/assets/images/images/005/829/314/large/devin-hansen-astrum-nebula-zoom1.jpg?1494052065); */
-        background-image: url('src/mapImage.jpg');
-    }
-    }
+    } 
+}  
 
 
 @media screen and (min-device-width: 1366px) {
@@ -281,8 +215,8 @@
         float:left;
         display: flex;
         flex-direction: column;
-        max-height: 104.3vh;
-        min-height: 104.3vh;
+        max-height: 93.3vh;
+        min-height: 93.3vh;
   }
      
     .countries{
@@ -347,10 +281,12 @@
     .graph,#canvas{
         float:left;
         display:flex;
-        height:75.8vh;
+        height:81.8vh;
         width:78%;
         background-color: #e1e7e7;
         background-image: url('src/covidImage.png');
+        background-size: 100% 100%;
+
     }
     
     .map, #chartdiv{
@@ -439,14 +375,16 @@
         .graph,#canvas{
             float:left;
             display:flex;
-            height:76vh;
+            height:81.6vh;
             width:78%;
             background-color: #e1e7e7;
             background-image: url('src/covidImage.png');
+            background-size: 100% 100%;
+
         }
         
         .map, #chartdiv{
-            height:77vh;
+            height:82.7vh;
             width:100%;
             background-color: #e1e7e7;
             /* background-image: url(https://wallpapersite.com/images/wallpapers/nebula-2560x2560-teal-turquoise-4k-8k-15333.jpg); */

@@ -1,15 +1,13 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
 <div class="fullPage">
-    <!-- <div class="toggleViewButtons" >
-        <h1 class="pageName">Covid Tracker</h1>
-        <button id="mapButton" (click)="displayMap()">Map View</button>
-        <button id="graphButton" (click)="clearSelection()">Graph View</button>
-    </div> -->
     <div class="countryTab" *ngIf="!showMapView">
         <div class="search">
            <input id="searchbox" type="text" placeholder="search country" name="search" [(ngModel)]="searchInput" (ngModelChange)='searchByCountry()'>
            <button id="clearButton" (click)="clearSelection()">Clear</button>
         </div>
-     <div class="countries">
+        <div class="countries">
         <div class="list">
             <ul>
                 <li *ngFor="let country of covidData | keyvalue" class="countryList">
@@ -48,4 +46,4 @@
     <div class="map" *ngIf="showMapView">
         <div id="chartdiv" ></div>
     </div>
-    </div>
+</div>
