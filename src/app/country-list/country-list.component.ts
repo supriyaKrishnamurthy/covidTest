@@ -33,7 +33,7 @@ export class CountryListComponent implements OnInit {
   globalTotalDeath:number=0;
   globalTotalRecovered:number=0;
   lastRow:number;
-  chart:[];
+  chart;
   clearTheSelection:boolean=false;
   globalConfirmedList:Array<number>=[];
   globalDeathList:Array<number>=[];
@@ -156,6 +156,9 @@ export class CountryListComponent implements OnInit {
   }
 
   displayChart(dates,confirms,deaths,recovers){
+   if(this.chart){
+     this.chart.destroy();
+   }
 
    this.chart=new Chart('canvas',{
       type: 'line',

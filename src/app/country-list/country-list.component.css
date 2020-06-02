@@ -122,8 +122,8 @@
         float:left;
         display: flex;
         flex-direction: column;
-        max-height: 94.8vh;
-        min-height: 94.8vh;
+        max-height: 93.4vh;
+        min-height: 93.4vh;
     }
      
     .countries{
