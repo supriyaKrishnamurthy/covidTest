@@ -32,6 +32,10 @@
     list-style-type: none;
 }
 
+.list ul{
+    padding-inline-start: initial;
+}
+
 .area{
      color:#56f5ef;
      font-size: medium;
@@ -47,7 +51,7 @@
 }
 
 #searchbox{
-    width: 66%;
+    width: 75%;
    }
 
 
@@ -134,6 +138,9 @@
         list-style-type: none;
     }
     
+    .list ul{
+        padding-inline-start: 40px;
+    }
     .area{
          color:#56f5ef;
          font-size: medium;
@@ -226,6 +233,9 @@
     }
     .countryList{
         list-style-type: none;
+    }
+    .list ul{
+        padding-inline-start: 40px;
     }
     
     .area{
@@ -320,6 +330,9 @@
         }
         .countryList{
             list-style-type: none;
+        }
+        .list ul{
+            padding-inline-start: 40px;
         }
         
         .area{
