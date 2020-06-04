@@ -113,6 +113,40 @@
     /* background-image: url(https://wallpapersite.com/images/wallpapers/nebula-2560x2560-teal-turquoise-4k-8k-15333.jpg); */
     /* background-image: url(https://cdna.artstation.com/p/assets/images/images/005/829/314/large/devin-hansen-astrum-nebula-zoom1.jpg?1494052065); */
     background-image: url('src/mapImage.jpg');
+    background-size: cover;
+
+}
+
+@media only screen and (min-device-width: 500px) {
+    .countryTab{
+        width:100%;
+        padding: 24px 0 0 24px;
+        box-sizing: border-box;
+        background-color: rgb(10, 12, 12);
+        float:left;
+        display: flex;
+        flex-direction: column;
+        max-height: 50vh;
+        min-height: 50vh;
+        align-content: center;
+    }
+
+    
+    #searchbox{
+        width: 85%;
+    }
+
+    .graph,#canvas{
+        float:left;
+        display:flex;
+        position: relative;
+        height:75vh;
+        width:100%;
+        background-color: #e1e7e7;
+        background-image: url('src/covidImage.png');
+        background-size: 100% 100%;
+    
+    }
 }
 
 
@@ -404,5 +438,6 @@
             /* background-image: url(https://wallpapersite.com/images/wallpapers/nebula-2560x2560-teal-turquoise-4k-8k-15333.jpg); */
             /* background-image: url(https://cdna.artstation.com/p/assets/images/images/005/829/314/large/devin-hansen-astrum-nebula-zoom1.jpg?1494052065); */
             background-image: url('src/mapImage.jpg');
+
         }
         }
