@@ -160,7 +160,8 @@ export class CountryListComponent implements OnInit {
      this.chart.destroy();
    }
 
-   this.chart=new Chart('canvas',{
+   setTimeout(() =>{
+    this.chart=new Chart('canvas',{
       type: 'line',
       data: {
         labels:dates,
@@ -192,29 +193,32 @@ export class CountryListComponent implements OnInit {
         }
       }
     })
+   },50)
+
   }
 
   displayMap() {
      this.showMapView=true;
 
-      let chart = am4core.create("chartdiv", am4maps.MapChart);
+     setTimeout(() => {
+      let map = am4core.create("chartdiv", am4maps.MapChart);
       // Set map definition
       
-      chart.geodata = am4geodata_worldLow;
+      map.geodata = am4geodata_worldLow;
       
       // Set projection
-      chart.projection = new am4maps.projections.Orthographic();
-      chart.panBehavior = "rotateLongLat";
-      chart.deltaLatitude = -20;
-      chart.padding(20,20,20,20);
+      map.projection = new am4maps.projections.Orthographic();
+      map.panBehavior = "rotateLongLat";
+      map.deltaLatitude = -20;
+      map.padding(20,20,20,20);
       
       // limits vertical rotation
-      chart.adapter.add("deltaLatitude", function(delatLatitude){
+      map.adapter.add("deltaLatitude", function(delatLatitude){
           return am4core.math.fitToRange(delatLatitude, -90, 90);
       })
       
       // Create map polygon series
-      let polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+      let polygonSeries = map.series.push(new am4maps.MapPolygonSeries());
       
       // Make map load polygon (like country names) data from GeoJSON
       polygonSeries.useGeodata = true;
@@ -238,29 +242,33 @@ export class CountryListComponent implements OnInit {
         this.printMap(country, countryName);      
       },this);
 
-      let graticuleSeries = chart.series.push(new am4maps.GraticuleSeries());
+      let graticuleSeries = map.series.push(new am4maps.GraticuleSeries());
       graticuleSeries.mapLines.template.line.stroke = am4core.color("#ffffff");
       graticuleSeries.mapLines.template.line.strokeOpacity = 0.08;
       graticuleSeries.fitExtent = false;
       
       
-      chart.backgroundSeries.mapPolygons.template.polygon.fillOpacity = 10;
-      chart.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#454a58");
+      map.backgroundSeries.mapPolygons.template.polygon.fillOpacity = 10;
+      map.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#454a58");
       
       // Create hover state and set alternative fill color
       let hs = polygonTemplate.states.create("hover");
-      hs.properties.fill = chart.colors.getIndex(0).brighten(-0.5);
+      hs.properties.fill = map.colors.getIndex(0).brighten(-0.5);
       
       let animation;
       setTimeout(function(){
-        animation = chart.animate({property:"deltaLongitude", to:100000}, 20000000);
-      }, 3000)
+        animation = map.animate({property:"deltaLongitude", to:100000}, 20000000);
+      }, 1000)
       
-      chart.seriesContainer.events.on("down", function(){
+      map.seriesContainer.events.on("down", function(){
       if(animation){
         animation.stop();
       }
       })
+
+     },50)
+
+
       
     
   }
