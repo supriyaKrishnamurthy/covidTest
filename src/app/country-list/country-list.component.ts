@@ -266,7 +266,7 @@ export class CountryListComponent implements OnInit {
       }
       })
 
-     },50)
+     },10)
 
 
       
