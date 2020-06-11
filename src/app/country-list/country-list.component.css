@@ -347,7 +347,7 @@
     @media screen and (min-device-width: 1500px) {
 
         .countryTab{
-            width:22%;
+            width:23%;
             padding: 24px 0 0 24px;
             box-sizing: border-box;
             background-color: rgb(10, 12, 12);
@@ -384,7 +384,7 @@
         }
         
         #searchbox{
-            width: 78%;
+            width: 75%;
            }
         
         
@@ -424,7 +424,7 @@
             float:left;
             display:flex;
             height:83.7vh;
-            width:78%;
+            width:77%;
             background-color: #e1e7e7;
             background-image: url('src/covidImage.png');
             background-size: 100% 100%;
