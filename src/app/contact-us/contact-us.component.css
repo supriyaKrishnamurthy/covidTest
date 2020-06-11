@@ -47,11 +47,6 @@ input[type="submit"], button {
   width: 104%;
 }
 
-.name-is-error, .email-is-error, .message-is-error{
-   padding: 0%;
-   color:red;
-
-}
 .divAboutUs {
 width:100%;
 display:block;

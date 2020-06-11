@@ -27,26 +27,12 @@
     <div>
     <section id="contact-form">
     <h2>Contact</h2>
-        <form id="contact" name="contact" accept-charset="utf-8" (ngSubmit)="processForm()" #contactForm="ngForm">
-            <div class="field"> 
+        <form id="contact" name="contact" accept-charset="utf-8"   action="https://formspree.io/mdowzglo" method="POST" ngNoForm>
                 <input type="text" name="name" class="input" placeholder="Your Name" [(ngModel)]="name" required minlength="3" #nameInput="ngModel">
-                <div class="name-is-error" *ngIf="nameInput.invalid && nameInput.touched">
-                    Name is required and needs to be at least 3 characters long.
-                </div>
-            </div>
-            <div class="field1">
                 <input type="email" name="email" class="input" placeholder="Your Email" [(ngModel)]="email" required email #emailInput="ngModel">
-                <div class="email-is-error" *ngIf="emailInput.dirty && emailInput.invalid">
-                    Email is required and needs to be a valid email.
-                </div>
-            </div>
-            <div class="field2">
+                <input type="hidden" name="_cc" value="basaveshwara.scs19@bmsce.ac.in">
                 <textarea class="textarea" name="message" placeholder="What's on your mind?" [(ngModel)]="message" required #messageInput="ngModel"></textarea>
-                <div class="message-is-error" *ngIf="messageInput.invalid && messageInput.touched">
-                    message is required.
-                </div>
-            </div>
-            <button type="submit"  value="Send" [disabled]="contactForm.invalid">Send</button>         
+                <button type="submit"  value="Send" >Send</button>         
         </form>
     </section>
     </div>
