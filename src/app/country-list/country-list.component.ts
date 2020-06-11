@@ -69,10 +69,6 @@ export class CountryListComponent implements OnInit {
 
   }
 
-  graphView(){
-   this.showMapView=false;
-  //  this.clearSelection();
-  }
 
   printCountry(country){
     this.clearTheSelection=false;
@@ -131,7 +127,7 @@ export class CountryListComponent implements OnInit {
     this.globalDeathList=[];
     this.globalRecoverdList=[];
   
-    let totalDays=this.covidMainData.Afghanistan.length-1 /**Check how to generalize this */
+    let totalDays=this.covidMainData.Afghanistan.length-1 
    /**for each date sumup the values of each country for that date**/
     for(let i=0;i<=totalDays;i++){
       let globalConfirmedByDate=0;

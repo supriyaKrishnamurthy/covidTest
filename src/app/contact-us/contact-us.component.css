@@ -325,7 +325,7 @@ background-size: 100% 100%;
   width:20%;
   display:block;
   float: left;
-  min-height: 91.3vh;
+  min-height: 94vh;
   text-align: justify;
   background-color: #375e5e;
   color: #a1aab3;
@@ -347,7 +347,7 @@ background-size: 100% 99%;
 }
 .covidInfo{
 width:100%;
-margin-top: 5%;
+margin-top: 6%;
 background-image: url("src/safety.png");
 height :34vh;
 background-repeat: no-repeat;

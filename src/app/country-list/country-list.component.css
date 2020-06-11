@@ -354,8 +354,8 @@
             float:left;
             display: flex;
             flex-direction: column;
-            max-height: 92.6vh;
-            min-height: 92.6vh;
+            max-height: 94vh;
+            min-height: 94vh;
         }
          
         .countries{
@@ -384,7 +384,7 @@
         }
         
         #searchbox{
-            width: 79%;
+            width: 78%;
            }
         
         
@@ -423,7 +423,7 @@
         .graph,#canvas{
             float:left;
             display:flex;
-            height:81.9vh;
+            height:83.7vh;
             width:78%;
             background-color: #e1e7e7;
             background-image: url('src/covidImage.png');
@@ -432,7 +432,7 @@
         }
         
         .map, #chartdiv{
-            height:82.7vh;
+            height:83.7vh;
             width:100%;
             background-color: #e1e7e7;
             /* background-image: url(https://wallpapersite.com/images/wallpapers/nebula-2560x2560-teal-turquoise-4k-8k-15333.jpg); */
